@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itinéraire de 5 jours à Séoul</title>
+    <title>Itinéraire détaillé de 5 jours à Séoul</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,12 +33,15 @@
         .day h3 {
             margin-top: 0;
             color: #C53030;
+            cursor: pointer;
         }
         .activity {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: none;
         }
         .activity-title {
             font-weight: bold;
+            color: #C53030;
         }
         #tips {
             background-color: white;
@@ -57,12 +60,16 @@
             margin-bottom: 15px;
             border-radius: 5px;
         }
+        .activity-details {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
     <h1>
         <span class="korean-title">서울에서의 5일 여행</span><br>
-        Itinéraire de 5 jours à Séoul
+        Itinéraire détaillé de 5 jours à Séoul
     </h1>
 
     <div id="itinerary"></div>
@@ -75,50 +82,135 @@
             {
                 day: "Jour 1 : Introduction à Séoul et le centre historique",
                 activities: [
-                    { title: "Palais Gyeongbokgung", description: "Visitez le palais principal de la dynastie Joseon, assistez à la cérémonie de la relève de la garde." },
-                    { title: "Musée National du Palais de Corée", description: "Explorez l'histoire et la culture de la dynastie Joseon." },
-                    { title: "Village Hanok de Bukchon", description: "Promenez-vous dans ce quartier traditionnel et découvrez les maisons hanok." },
-                    { title: "Insadong", description: "Explorez cette rue artistique pleine de galeries, boutiques d'artisanat, et maisons de thé." }
+                    {
+                        title: "Palais Gyeongbokgung",
+                        description: "Le plus grand des cinq grands palais construits pendant la dynastie Joseon.",
+                        details: "Horaires : Ouvert tous les jours sauf le mardi, de 09h00 à 18h00 (dernière admission à 17h00). Activité recommandée : Assister à la cérémonie de la relève de la garde qui a lieu plusieurs fois par jour."
+                    },
+                    {
+                        title: "Musée National du Palais de Corée",
+                        description: "Situé à l'intérieur du palais Gyeongbokgung, ce musée offre une collection riche d'artefacts royaux.",
+                        details: "Horaires : Ouvert tous les jours sauf le mardi, de 09h00 à 18h00. Activité recommandée : Visitez les expositions sur les vêtements royaux, les instruments de musique et les objets de la vie quotidienne de la cour."
+                    },
+                    {
+                        title: "Village Hanok de Bukchon",
+                        description: "Un quartier traditionnel coréen avec des maisons hanok préservées datant de la dynastie Joseon.",
+                        details: "Activité recommandée : Promenade à pied pour découvrir l'architecture traditionnelle et visiter quelques maisons ouvertes au public."
+                    },
+                    {
+                        title: "Insadong",
+                        description: "Rue célèbre pour ses galeries d'art, boutiques d'artisanat, et maisons de thé.",
+                        details: "Activité recommandée : Acheter des souvenirs traditionnels et déguster un thé coréen dans une maison de thé."
+                    }
                 ],
                 imageQuery: "Seoul palace"
             },
             {
-                day: "Jour 2 : Modernité et vues panoramiques",
+                day: "Jour 2 : Modernité, K-pop et vues panoramiques",
                 activities: [
-                    { title: "Tour Namsan Séoul (N Seoul Tower)", description: "Montez à la tour pour une vue panoramique sur Séoul." },
-                    { title: "Quartier de Myeongdong", description: "Faites du shopping et dégustez de la street food coréenne." },
-                    { title: "Dongdaemun Design Plaza (DDP)", description: "Visitez ce bâtiment futuriste pour des expositions et du shopping." },
-                    { title: "Marché de Dongdaemun", description: "Explorez ce marché animé et ses boutiques de mode." }
+                    {
+                        title: "Tour Namsan Séoul (N Seoul Tower)",
+                        description: "Une tour d'observation offrant une vue panoramique sur Séoul.",
+                        details: "Horaires : Ouverte tous les jours de 10h00 à 23h00. Activité recommandée : Monter à la plateforme d'observation et accrocher un cadenas d'amour sur les grilles du pont."
+                    },
+                    {
+                        title: "Quartier de Myeongdong",
+                        description: "Principal quartier commerçant de Séoul avec des boutiques de mode, des cosmétiques et des restaurants.",
+                        details: "Activité recommandée : Déguster la street food coréenne comme les hotteok (crêpes sucrées), les tteokbokki (gâteaux de riz épicés), et les mandu (raviolis)."
+                    },
+                    {
+                        title: "K-Star Road à Gangnam",
+                        description: "Rue dédiée aux fans de K-pop avec des statues de groupes célèbres et des boutiques de souvenirs K-pop.",
+                        details: "Activité recommandée : Prendre des photos avec les statues et visiter les boutiques vendant des articles de vos idols préférés."
+                    },
+                    {
+                        title: "SMTOWN Coex Artium",
+                        description: "Complexe de divertissement K-pop comprenant des expositions, des cafés thématiques, et des boutiques dédiées aux artistes de SM Entertainment.",
+                        details: "Horaires : Ouvert tous les jours de 11h00 à 21h00. Activité recommandée : Visitez les studios d'enregistrement et les expositions interactives, et achetez des articles de vos stars K-pop préférées."
+                    }
                 ],
-                imageQuery: "Seoul skyline"
+                imageQuery: "Seoul K-pop"
             },
             {
                 day: "Jour 3 : Culture et traditions",
                 activities: [
-                    { title: "Palais Changdeokgung et Jardin Secret", description: "Visitez ce palais inscrit au patrimoine mondial de l'UNESCO." },
-                    { title: "Marché Gwangjang", description: "Dégustez des plats locaux dans ce marché alimentaire traditionnel." },
-                    { title: "Temple Jogyesa", description: "Découvrez ce temple bouddhiste situé en plein cœur de Séoul." },
-                    { title: "Cheonggyecheon Stream", description: "Promenez-vous le long de ce ruisseau urbain restauré." }
+                    {
+                        title: "Palais Changdeokgung et Jardin Secret",
+                        description: "Palais royal inscrit au patrimoine mondial de l'UNESCO avec un magnifique jardin secret.",
+                        details: "Horaires : Ouvert tous les jours sauf le lundi, de 09h00 à 18h00. Activité recommandée : Faire une visite guidée du jardin secret (réservation recommandée)."
+                    },
+                    {
+                        title: "Marché Gwangjang",
+                        description: "Marché traditionnel célèbre pour ses plats de rue et ses produits textiles.",
+                        details: "Horaires : Ouvert tous les jours de 09h00 à 22h00. Activité recommandée : Déguster des plats locaux comme le bindaetteok (galettes de haricots mungo) et le mayak gimbap (rouleaux de riz)."
+                    },
+                    {
+                        title: "Temple Jogyesa",
+                        description: "Principal temple bouddhiste de Séoul, connu pour ses magnifiques lanternes de lotus.",
+                        details: "Horaires : Ouvert tous les jours. Activité recommandée : Assister à une cérémonie bouddhiste et se promener dans le jardin du temple."
+                    },
+                    {
+                        title: "Cheonggyecheon Stream",
+                        description: "Ruisseau restauré au cœur de Séoul, offrant une promenade paisible en plein centre-ville.",
+                        details: "Activité recommandée : Marcher le long du ruisseau en soirée pour voir les illuminations et les sculptures."
+                    }
                 ],
                 imageQuery: "Seoul traditional market"
             },
             {
-                day: "Jour 4 : Exploration de la rive sud",
+                day: "Jour 4 : Exploration de la rive sud et immersion K-pop",
                 activities: [
-                    { title: "Quartier de Gangnam", description: "Explorez ce quartier moderne et branché." },
-                    { title: "COEX Mall et Aquarium", description: "Faites du shopping et visitez l'aquarium." },
-                    { title: "Temple Bongeunsa", description: "Visitez ce temple paisible situé près de COEX." },
-                    { title: "Banpo Hangang Park", description: "Assistez au spectacle de fontaines arc-en-ciel sur le pont Banpo." }
+                    {
+                        title: "Quartier de Gangnam",
+                        description: "Quartier moderne et branché connu pour ses gratte-ciel et ses boutiques de luxe.",
+                        details: "Activité recommandée : Visiter les centres commerciaux et découvrir la vie nocturne animée."
+                    },
+                    {
+                        title: "COEX Mall et Aquarium",
+                        description: "Centre commercial souterrain avec un aquarium, des boutiques et des restaurants.",
+                        details: "Horaires : Ouvert tous les jours de 10h00 à 22h00 (aquarium ouvert de 10h00 à 20h00). Activité recommandée : Visiter l'aquarium et faire du shopping dans le centre commercial."
+                    },
+                    {
+                        title: "Temple Bongeunsa",
+                        description: "Temple bouddhiste paisible situé près de COEX.",
+                        details: "Horaires : Ouvert tous les jours de 05h00 à 21h00. Activité recommandée : Participer à une cérémonie de méditation ou à un programme de séjour temple."
+                    },
+                    {
+                        title: "Banpo Hangang Park",
+                        description: "Parc le long de la rivière Han, célèbre pour ses fontaines arc-en-ciel sur le pont Banpo.",
+                        details: "Activité recommandée : Assister au spectacle de fontaines en soirée et louer un vélo pour explorer le parc."
+                    },
+                    {
+                        title: "Café Thématique K-pop",
+                        description: "Cafés dédiés aux fans de K-pop, souvent décorés avec des souvenirs et des thèmes de groupes de K-pop.",
+                        details: "Activité recommandée : Visiter un café thématique de votre groupe K-pop préféré et profiter de l'ambiance unique."
+                    }
                 ],
                 imageQuery: "Gangnam Seoul"
             },
             {
                 day: "Jour 5 : Nature et détente",
                 activities: [
-                    { title: "Parc de Namsan", description: "Randonnée ou téléphérique jusqu'à la tour Namsan." },
-                    { title: "Han River Park", description: "Louez un vélo ou faites un pique-nique le long du fleuve Han." },
-                    { title: "Lotte World Tower", description: "Montez à l'observatoire pour une vue imprenable sur la ville." },
-                    { title: "Hongdae", description: "Explorez ce quartier jeune et dynamique, célèbre pour ses cafés, boutiques et vie nocturne." }
+                    {
+                        title: "Parc de Namsan",
+                        description: "Parc offrant des sentiers de randonnée et une vue panoramique sur Séoul.",
+                        details: "Activité recommandée : Randonnée ou téléphérique jusqu'à la tour Namsan."
+                    },
+                    {
+                        title: "Han River Park",
+                        description: "Vaste parc le long du fleuve Han, populaire pour les activités de plein air.",
+                        details: "Activité recommandée : Louez un vélo ou faites un pique-nique le long du fleuve Han."
+                    },
+                    {
+                        title: "Lotte World Tower",
+                        description: "Gratte-ciel emblématique de Séoul avec un observatoire offrant une vue imprenable sur la ville.",
+                        details: "Activité recommandée : Montez à l'observatoire pour une vue panoramique sur Séoul."
+                    },
+                    {
+                        title: "Hongdae",
+                        description: "Quartier jeune et dynamique, célèbre pour ses cafés, boutiques et vie nocturne.",
+                        details: "Activité recommandée : Explorez les boutiques uniques, assistez à des performances de rue et profitez de l'ambiance animée en soirée."
+                    }
                 ],
                 imageQuery: "Han River Seoul"
             }
@@ -131,7 +223,7 @@
             { title: "Saisons", description: "Préférez le printemps (avril-mai) ou l'automne (septembre-octobre) pour une météo agréable." }
         ];
 
-        const UNSPLASH_ACCESS_KEY = 'TGXGp5Q_qh88wX6o7WzNetIk_LEp3pq73_UIu4bTGuo '; // Replace with your actual Unsplash access key
+        const UNSPLASH_ACCESS_KEY = 'TGXGp5Q_qh88wX6o7WzNetIk_LEp3pq73_UIu4bTGuo';
 
         async function fetchUnsplashImage(query) {
             const response = await fetch(`https://api.unsplash.com/photos/random?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}`);
@@ -152,7 +244,9 @@
                         <h3>${day.day}</h3>
                         ${day.activities.map(activity => `
                             <div class="activity">
-                                <span class="activity-title">${activity.title}:</span> ${activity.description}
+                                <div class="activity-title">${activity.title}</div>
+                                <div>${activity.description}</div>
+                                <div class="activity-details">${activity.details}</div>
                             </div>
                         `).join('')}
                     `;
@@ -162,27 +256,20 @@
                         <h3>${day.day}</h3>
                         ${day.activities.map(activity => `
                             <div class="activity">
-                                <span class="activity-title">${activity.title}:</span> ${activity.description}
+                                <div class="activity-title">${activity.title}</div>
+                                <div>${activity.description}</div>
+                                <div class="activity-details">${activity.details}</div>
                             </div>
                         `).join('')}
                     `;
                 }
                 
+                dayDiv.querySelector('h3').addEventListener('click', function() {
+                    const activities = this.parentNode.querySelectorAll('.activity');
+                    activities.forEach(activity => {
+                        activity.style.display = activity.style.display === 'none' ? 'block' : 'none';
+                    });
+                });
+                
                 itineraryDiv.appendChild(dayDiv);
             }
-        }
-
-        function renderTips() {
-            const tipsDiv = document.getElementById('tips');
-            tips.forEach(tip => {
-                const tipP = document.createElement('p');
-                tipP.innerHTML = `<strong>${tip.title}:</strong> ${tip.description}`;
-                tipsDiv.appendChild(tipP);
-            });
-        }
-
-        renderItinerary();
-        renderTips();
-    </script>
-</body>
-</html>
